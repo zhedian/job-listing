@@ -2,7 +2,10 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_action :find_job, only: [:show, :edit, :update, :destroy]
   def show
-
+    if @job.is_hidden
+      flash[:warning] = "This job already archieved"
+      redirect_to root_path
+    end
   end
 
   def index
