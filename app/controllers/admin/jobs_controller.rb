@@ -2,11 +2,12 @@ class Admin::JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :index]
   before_action :require_is_admin
   before_action :find_job, only: [:edit, :update, :destroy, :show]
+  layout "admin"
 
   def index
     @jobs = Job.all
   end
-
+=begin
   def new
     @job = Job.new
   end
@@ -51,6 +52,6 @@ class Admin::JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden)
   end
-
+=end
 
 end
