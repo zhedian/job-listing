@@ -2,3 +2,28 @@
 <p>
   <%= simple_format(@job.description) %>
 </p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>简历内容</th>
+      <th>PDF简历</th>
+      <th>投递者</th>
+      <th>投递时间</th>
+    </tr>
+  <tbody>
+    <% @resumes.each do |resume| %>
+      <tr>
+        <td><%= resume.content %></td>
+        <td>
+          <% if resume.attachment.present? %>
+            <%= link_to("下载简历", resume.attachment_url) %>
+          <% else %>
+            No Attachment
+          <% end %>
+        </td>
+        <td><%= resume.user.email %></td>
+        <td><%= resume.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

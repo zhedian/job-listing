@@ -11,7 +11,7 @@ class Admin::JobsController < ApplicationController
 
   def hide
     @job.hide!
-    redirect_to :back 
+    redirect_to :back
   end
 
   def index
@@ -19,6 +19,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def show
+    @resumes = @job.resumes 
 
   end
 
