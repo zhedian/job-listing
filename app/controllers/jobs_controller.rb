@@ -6,6 +6,7 @@ class JobsController < ApplicationController
       flash[:warning] = "This job already archieved"
       redirect_to root_path
     end
+    
   end
 
   def index
@@ -16,7 +17,7 @@ class JobsController < ApplicationController
       Job.where(:is_hidden => false).order("wage_upper_bound DESC")
     else
       Job.where(:is_hidden => false).order("created_at DESC")
-    end 
+    end
   end
 
   def new

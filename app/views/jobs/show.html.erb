@@ -1,4 +1,7 @@
-<h1> <%= @job.title %> </h1>
-<p>
-  <%= simple_format(@job.description) %>
-</p>
+<div class="col-md-4 col-md-offset-4">
+  <h1> <%= @job.title %> </h1>
+  <p>
+    <%= simple_format(@job.description) %>
+  </p>
+  <%= link_to("提交简历", new_job_resume_path(@job), class: "btn btn-default")%>
+</div>
