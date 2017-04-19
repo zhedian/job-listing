@@ -16,7 +16,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "font-awesome"; 
+@import "font-awesome";
 //---------Navbar---------
 
  .navbar-default {
@@ -136,4 +136,32 @@ footer {
 footer .footer-below {
     padding: 25px 0;
     background-color: #233140;
+}
+
+.caption {
+  margin: 30px;
+  text-align: center;
+  top: 20px;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+    margin-top: 60px;
+}
+
+
+.custab{
+  border: 1px solid #ccc;
+
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
 }
